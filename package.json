@@ -1,0 +1,38 @@
+{
+  "name": "auth-boilerplate",
+  "version": "1.0.0",
+  "description": "The shell for a hapi and bell powered auth system",
+  "author": "Scott Williams",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node server",
+    "start:watch": "nodemon server",
+    "test": "lab -a code -L",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "bell": "^9.3.1",
+    "boom": "7.x.x",
+    "hapi-auth-cookie": "^9.0.0",
+    "haute-couture": "3.x.x",
+    "joi": "13.x.x"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "code": "5.x.x",
+    "confidence": "3.x.x",
+    "dotenv": "5.x.x",
+    "eslint": "4.x.x",
+    "glue": "5.x.x",
+    "hapi": "17.x.x",
+    "hpal-debug": "1.x.x",
+    "lab": "15.x.x",
+    "nodemon": "^1.17.5",
+    "toys": "2.x.x"
+  }
+}
