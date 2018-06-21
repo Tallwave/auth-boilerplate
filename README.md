@@ -18,7 +18,14 @@ $ git clone git@github.com:<YourRepo>/auth-boilerplate.git
 ```
 yarn install
 ```
-5. ensure the server code is running on another terminal
+5. rename the .env-keep to .env and add the environment variables:
+ - AUTH_COOKIE_PASSWORD
+ Set up an [oauth account](https://github.com/hapijs/bell/blob/master/API.md) and follow the instructions on how to get a cookie password
+
+ - GOOGLE_CLIENT_ID
+ - GOOGLE_CLIENT_SECRET
+
+6. ensure the server code is running on another terminal
 
 7. Run all the tests to ensure everything is passing
 ```
