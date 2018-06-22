@@ -25,7 +25,7 @@ To set up additional Google provider keys, see the [Auth0 docs](https://auth0.co
  - GOOGLE_CLIENT_ID
  - GOOGLE_CLIENT_SECRET
 
-6. ensure the server code is running on another terminal
+6. Ensure the server code is running on another terminal
 
 7. Run all the tests to ensure everything is passing
 ```
