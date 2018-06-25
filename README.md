@@ -20,16 +20,17 @@ yarn install
 ```
 5. Review [Google's OAuth 2.0 documentation](https://developers.google.com/identity/protocols/OAuth2).
 6. Create a Google OAuth application, if necessary. (see [oauth](#oauth))
-5. Rename the .env-keep to .env and add the environment variables:
+7. Rename the .env-keep to .env and add the environment variables:
+
  - AUTH_COOKIE_PASSWORD - This can be anything. When deploying to a production environment, use a strong value. There is a minimum length of 32 characters.
  Set up an [oauth account](https://github.com/hapijs/bell/blob/master/API.md) and follow the instructions on how to get a cookie password
 To set up additional Google provider keys, see the [Auth0 docs](https://auth0.com/docs/connections/social/devkeys)
  - GOOGLE_CLIENT_ID
  - GOOGLE_CLIENT_SECRET
 
-6. Ensure the server code is running on another terminal
+8. Ensure the server code is running on another terminal
 
-7. Run all the tests to ensure everything is passing
+9. Run all the tests to ensure everything is passing
 ```
 yarn test
 ```
