@@ -22,11 +22,11 @@ yarn install
 6. Create a Google OAuth application, if necessary. (see [oauth](#oauth))
 7. Rename the .env-keep to .env and add the environment variables:
 
- - AUTH_COOKIE_PASSWORD - This can be anything. When deploying to a production environment, use a strong value. There is a minimum length of 32 characters.
+ - `AUTH_COOKIE_PASSWORD` - This can be anything. When deploying to a production environment, use a strong value. There is a minimum length of 32 characters.
  Set up an [oauth account](https://github.com/hapijs/bell/blob/master/API.md) and follow the instructions on how to get a cookie password
 To set up additional Google provider keys, see the [Auth0 docs](https://auth0.com/docs/connections/social/devkeys)
- - GOOGLE_CLIENT_ID
- - GOOGLE_CLIENT_SECRET
+ - `GOOGLE_CLIENT_ID`
+ - `GOOGLE_CLIENT_SECRET`
 
 8. Ensure the server code is running on another terminal
 
@@ -54,6 +54,7 @@ The redirect URI is similar, and must match what is configured in the routes, in
 Click the Create button to create the Client ID and Client Secret tokens and add them to your `.env` file.
 
 # Project Structure
+```
 /lib
   /auth
   /routes
@@ -64,12 +65,8 @@ Click the Create button to create the Client ID and Client Secret tokens and add
   manifest
 /test
   index
-
-# Database(s)
-
-# License
-ISC
+```
 
 # Contributors
-Scott Williams (main author)
-Tina Heiligers
+* Scott Williams
+* Tina Heiligers
