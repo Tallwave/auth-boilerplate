@@ -12,9 +12,7 @@ exports.deployment = async (start) => {
   if (!start) {
     return server;
   }
-
   await server.start();
-
   /* eslint-disable no-console */
   console.log(`Server started at ${server.info.uri}`);
   /* eslint-enable */

@@ -23,16 +23,13 @@ module.exports = new Confidence.Store({
   register: {
     plugins: [
       {
-        plugin: 'bell',
+        plugin: 'bell',// this is a scheme
       },
       {
-        plugin: 'hapi-auth-cookie',
+        plugin: 'hapi-auth-cookie',// this is a scheme
       },
       {
-        plugin: 'hapi-auth-basic',
-      },
-      {
-        plugin: '../lib/auth', // auth plugin because the file name is 'index.js' and haute-couture won't automatically register it.
+        plugin: 'hapi-auth-basic',// this is a scheme
       },
       {
         plugin: '../lib', // Main plugin
