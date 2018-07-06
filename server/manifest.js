@@ -29,7 +29,7 @@ module.exports = new Confidence.Store({
         plugin: 'hapi-auth-cookie',
       },
       {
-        plugin: '../lib/auth',
+        plugin: '../lib/auth', // auth plugin because the file name is 'index.js' and haute-couture won't automatically register it.
       },
       {
         plugin: '../lib', // Main plugin
