@@ -22,7 +22,8 @@
     "hapi-auth-basic": "^5.0.0",
     "hapi-auth-cookie": "^9.0.0",
     "haute-couture": "3.x.x",
-    "joi": "13.x.x"
+    "joi": "13.x.x",
+    "jsonwebtoken": "^8.3.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
