@@ -23,15 +23,6 @@ module.exports = new Confidence.Store({
   register: {
     plugins: [
       {
-        plugin: 'bell',// this is a scheme
-      },
-      {
-        plugin: 'hapi-auth-cookie',// this is a scheme
-      },
-      {
-        plugin: 'hapi-auth-basic',// this is a scheme
-      },
-      {
         plugin: '../lib', // Main plugin
         options: {},
       },
