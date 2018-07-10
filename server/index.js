@@ -16,7 +16,6 @@ exports.deployment = async (start) => {
   /* eslint-disable no-console */
   console.log(`Server started at ${server.info.uri}`);
   /* eslint-enable */
-
   return server;
 };
 
