@@ -23,12 +23,14 @@ yarn install
 7. Rename the .env-keep to .env and add the environment variables:
 
  - `AUTH_COOKIE_PASSWORD` - This can be anything. When deploying to a production environment, use a strong value. There is a minimum length of 32 characters.
- - `JWT_PASSWORD` - This can be anything. Use a string password with a minimum of 32 characters (alphanumeric)
+ 
+
  Set up an [oauth account](https://github.com/hapijs/bell/blob/master/API.md) and follow the instructions on how to get a cookie password
 To set up additional Google provider keys, see the [Auth0 docs](https://auth0.com/docs/connections/social/devkeys)
  - `GOOGLE_CLIENT_ID`
  - `GOOGLE_CLIENT_SECRET`
-
+To set up JWT:
+- `JWT_PASSWORD` - This can be anything. Use a string password with a minimum of 32 characters (alphanumeric)
 8. Ensure the server code is running on another terminal
 
 9. Run all the tests to ensure everything is passing
