@@ -1,16 +1,15 @@
-const jwt = require('jsonwebtoken'); // used to create the JWT,
+const jwt = require('jsonwebtoken');
 
 const setJWTAndRespond = (user, h, url = '/restricted') => {
-// Create the JWT
   const userJWTtoken = jwt.sign({
-    exp: Math.floor(Date.now() / 1000) + (60 * 60),// setting expiration as 1 hour
+    exp: Math.floor(Date.now() / 1000) + (60 * 60 * 24),// setting expiration as 1 day
     id: user.id,
     username: user.username,
   }, process.env.JWT_PASSWORD);
 
   return h.response({ token: userJWTtoken })
-    .state('session', userJWTtoken) // set the cookie
-    .header('Authorization', `jwt ${userJWTtoken}`) // set the header
+    .state('session', userJWTtoken)
+    .header('Authorization', `jwt ${userJWTtoken}`)
     .redirect(url);
 };
 
