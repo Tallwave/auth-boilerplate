@@ -9,7 +9,8 @@ Authentication scheme(s) in auth/schemes.js rather than calling server.auth.sche
 Plugins are placed in the plugins/ folder and the file name takes it's name from the plugin package with contents of `module.exports = {}` if no configurations need be set.
 
 
-Two methods of authentication are implemented: username and password (with the username as an email address) and login with Google. Both methods generate a JWT and return the token as both a header with 
+Two methods of authentication are implemented: username and password (with the username as an email address) and login with Google. Both methods generate a JWT and return the token as both a header with 'Authorization', 'jwt ${userJWTtoken}' and a session cookie.
+
 # Tech Stack
 Node
 
