@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const setJWTAndRespond = (user, h, url = '/restricted') => {
+const setJWTAndRespond = (user, h, url = 'http://localhost:3000') => {
   const userJWTtoken = jwt.sign({
     exp: Math.floor(Date.now() / 1000) + (60 * 60 * 24),// setting expiration as 1 day
     id: user.id,
