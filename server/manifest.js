@@ -18,7 +18,10 @@ module.exports = new Confidence.Store({
       },
     },
     routes: {
-      cors: true,
+      cors: {
+        $filter: 'NODE_ENV',
+        development: true,
+      },
     },
   },
   register: {
