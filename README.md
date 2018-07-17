@@ -1,7 +1,15 @@
 # auth-boilerplate
 
 # Description
-A shell for a hapi and bell powered auth system. (Boiler plate for log in and authentication).
+A shell for a hapi and bell powered auth system using JWT and cookies for session storage. (Boiler plate for log in and authentication).
+The server is composed with Glue while the plugin composition is handled by [haute-courture](https://www.npmjs.com/package/haute-couture). Haute-couture uses a file-based indexing system:
+For example:
+Route configurations placed in your routes/ directory will be registered using server.route().
+Authentication scheme(s) in auth/schemes.js rather than calling server.auth.scheme().
+Plugins are placed in the plugins/ folder and the file name takes it's name from the plugin package with contents of `module.exports = {}` if no configurations need be set.
+
+
+Two methods of authentication are implemented: username and password (with the username as an email address) and login with Google. Both methods generate a JWT and return the token as both a header with 'Authorization', 'jwt ${userJWTtoken}' and a session cookie.
 
 # Tech Stack
 Node
@@ -23,10 +31,17 @@ yarn install
 7. Rename the .env-keep to .env and add the environment variables:
 
  - `AUTH_COOKIE_PASSWORD` - This can be anything. When deploying to a production environment, use a strong value. There is a minimum length of 32 characters.
+ 
+
  Set up an [oauth account](https://github.com/hapijs/bell/blob/master/API.md) and follow the instructions on how to get a cookie password
 To set up additional Google provider keys, see the [Auth0 docs](https://auth0.com/docs/connections/social/devkeys)
+
  - `GOOGLE_CLIENT_ID`
  - `GOOGLE_CLIENT_SECRET`
+
+To set up JWT:
+
+- `JWT_PASSWORD` - This can be anything. Use a string password with a minimum of 32 characters (alphanumeric)
 
 8. Ensure the server code is running on another terminal
 
@@ -37,8 +52,7 @@ yarn test
 
 # Plugins
  - bell
- - hapi-auth-cookie
- - auth (custom)
+ - hapi-auth-jwt2
 
 # OAuth
 An application registered with Google is required for Google's OAuth to work. An application can be created by navigating to their [API console](https://console.developers.google.com/apis) and clicking "Create a Project". The project is where the authentication screen can be customized.
@@ -57,6 +71,8 @@ Click the Create button to create the Client ID and Client Secret tokens and add
 ```
 /lib
   /auth
+  /cookies
+  /plugins
   /routes
   .hc.js
   index
@@ -64,6 +80,7 @@ Click the Create button to create the Client ID and Client Secret tokens and add
   index
   manifest
 /test
+/utils
   index
 ```
 
