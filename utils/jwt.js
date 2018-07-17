@@ -1,7 +1,14 @@
 const jwt = require('jsonwebtoken');
 
+const setJWTUserToken = (user) => {
+  return jwt.sign({
+    exp: Math.floor(Date.now() / 1000) + (60 * 60 * 24),// setting expiration as 1 day
+    id: user.id,
+    username: user.username,
+  }, process.env.JWT_PASSWORD);
+};
+
 const setJWTAndRespond = (user, h, url) => {
-  console.log('in setJWTAndRespond', url)
   const userJWTtoken = jwt.sign({
     exp: Math.floor(Date.now() / 1000) + (60 * 60 * 24),// setting expiration as 1 day
     id: user.id,
@@ -17,5 +24,13 @@ const setJWTAndRespond = (user, h, url) => {
   }
   return response;
 };
+const setJWTAndRespondNoRedirect = (user, h) => {
+  const userJWTtoken = setJWTUserToken(user);
+  const response = h.response({ token: userJWTtoken })
+    .state('session', userJWTtoken)
+    .header('Authorization', `jwt ${userJWTtoken}`)
+    .header('Access-Control-Allow-Credentials', true);
+  return response;
+};
 
-module.exports = setJWTAndRespond;
+module.exports = [{ setJWTAndRespond, setJWTAndRespondNoRedirect }];
