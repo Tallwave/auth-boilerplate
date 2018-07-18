@@ -72,3 +72,18 @@ describe("routes -> '/restricted'", () => {
     expect(result.statusCode).to.equal(401);
   });
 });
+describe("routes -> '/auth/logout'", () => {
+  it('logs users out', async () => {
+    const server = await Server.deployment();
+    const options = {
+      method: 'GET',
+      url: '/auth/logout',
+    };
+    const result = await server.inject(options);
+    expect(result).to.exist();
+    expect(result.statusCode).to.equal(200);
+    expect(result.headers.authorization).to.be.null();
+    expect(result.result).to.equal('Good bye!');
+    expect(result.request.state).to.equal({});
+  });
+});
