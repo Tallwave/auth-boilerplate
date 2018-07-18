@@ -30,3 +30,4 @@ module.exports =
       return response;
     },
   };
+  // ?? Do I need to expire the JWT token or can I simply remove/delete it?
