@@ -15,7 +15,6 @@ const { expect } = Code;
 describe('Deployment', () => {
   it('registers the main plugin.', async () => {
     const server = await Server.deployment();
-
     expect(server.registrations[Package.name]).to.exist();
   });
 });
