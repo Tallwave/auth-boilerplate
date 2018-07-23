@@ -12,7 +12,9 @@
   "scripts": {
     "start": "node server",
     "start:watch": "nodemon server",
-    "test": "lab -a code -L",
+    "test": "lab --assert code",
+    "test-coverage": "lab --assert code --coverage",
+    "test-full": "lab --assert code --coverage -L",
     "lint": "eslint ."
   },
   "dependencies": {

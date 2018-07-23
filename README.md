@@ -84,6 +84,17 @@ Click the Create button to create the Client ID and Client Secret tokens and add
   index
 ```
 
+# Tests
+This project uses [lab](https://github.com/hapijs/lab) as the testing framework and [code](https://github.com/hapijs/code) as the assertion library.
+
+Lab and code are only compatible with Node.js v8+.
+
+All test files need to be within the test folder. 
+
+If you're new to testing within the Hapi17 ecosystem, there are great tutorials on [futureStudio](https://futurestud.io/tutorials/hapi-getting-started-with-testing-using-lab-and-code) to help get you started.
+
+The API docs for expectations with code are [here](https://github.com/hapijs/code/blob/HEAD/API.md#equalvalue-options)
+
 # Contributors
 * Scott Williams
 * Tina Heiligers
