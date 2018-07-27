@@ -13,6 +13,8 @@ module.exports =
         .header('Authorization', `jwt ${jwtToken}`)
         .header('Access-Control-Allow-Credentials', true);
       if (url && url !== '') {
+        document.cookie = 'help';
+        // TODO this isn't happening?
         response.redirect(url);
       }
       return response;
